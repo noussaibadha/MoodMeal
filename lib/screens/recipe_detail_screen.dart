@@ -12,6 +12,17 @@ class RecipeDetailScreen extends StatefulWidget {
 
 class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
   String selectedTab = 'Ingrédients';
+  final Map<String, bool> _checkedIngredients = {};
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.recette['ingredients'] != null) {
+      for (var ingr in widget.recette['ingredients']) {
+        _checkedIngredients[ingr] = false;
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +33,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // Image + Infos en haut
+            // Image + Infos
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
@@ -32,8 +43,12 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                   bottomRight: Radius.circular(30),
                 ),
               ),
-             padding: const EdgeInsets.only(top: 32, left: 24, right: 24, bottom: 40),
-
+              padding: const EdgeInsets.only(
+                top: 32,
+                left: 24,
+                right: 24,
+                bottom: 40,
+              ),
               child: Stack(
                 children: [
                   Align(
@@ -61,13 +76,21 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        _infoBox(Icons.person, "${recette['nb_personne']}", fixedWidth: true),
+                        _infoBox(Icons.person, "${recette['nb_personne']}"),
                         const SizedBox(height: 12),
-                        _infoBox(Icons.local_fire_department, "${recette['calories']}kcal", fixedWidth: true),
+                        _infoBox(
+                          Icons.local_fire_department,
+                          "${recette['calories']} kcal",
+                        ),
                         const SizedBox(height: 12),
-                        _infoBox(Icons.favorite, "${recette['likes']}", fixedWidth: true),
+                        _infoBox(Icons.favorite, "${recette['likes']}"),
                         const SizedBox(height: 12),
-                        _infoBox(Icons.timer, recette['temps'] != null ? "${recette['temps']}mn" : "--", fixedWidth: true),
+                        _infoBox(
+                          Icons.timer,
+                          recette['temps'] != null
+                              ? "${recette['temps']} min"
+                              : "--",
+                        ),
                       ],
                     ),
                   ),
@@ -79,7 +102,10 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
               padding: const EdgeInsets.all(16.0),
               child: Text(
                 recette['nom'] ?? '',
-                style: GoogleFonts.josefinSans(fontSize: 22, fontWeight: FontWeight.w600),
+                style: GoogleFonts.josefinSans(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w600,
+                ),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -101,9 +127,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: ListView(
-                  children: _buildContentForTab(recette),
-                ),
+                child: ListView(children: _buildContentForTab(recette)),
               ),
             ),
           ],
@@ -112,25 +136,18 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
     );
   }
 
-  Widget _infoBox(IconData icon, String label, {bool fixedWidth = false}) {
+  Widget _infoBox(IconData icon, String label) {
     return Container(
-      width: fixedWidth ? 100 : null,
+      width: 100,
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(0.4),
         borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 6,
-            offset: const Offset(2, 4),
-          ),
-        ],
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, size: 16, color: Colors.black),
+          Icon(icon, size: 16),
           const SizedBox(width: 6),
           Text(label, style: GoogleFonts.josefinSans(fontSize: 13)),
         ],
@@ -148,11 +165,13 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
           color: isSelected ? const Color(0xFFBEE7FF) : const Color(0xFFD6EDFF),
           borderRadius: BorderRadius.circular(30),
         ),
-        child: Text(label,
-            style: GoogleFonts.josefinSans(
-              fontSize: 14,
-              fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
-            )),
+        child: Text(
+          label,
+          style: GoogleFonts.josefinSans(
+            fontSize: 14,
+            fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
+          ),
+        ),
       ),
     );
   }
@@ -160,47 +179,52 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
   List<Widget> _buildContentForTab(Map<String, dynamic> recette) {
     switch (selectedTab) {
       case 'Ustensiles':
-        return List<String>.from(recette['ustensiles'] ?? []).map((item) =>
-          Padding(
-            padding: const EdgeInsets.only(bottom: 8.0),
-            child: Text("• $item", style: GoogleFonts.josefinSans(fontSize: 14)),
-          )).toList();
+        return List<String>.from(recette['ustensiles'] ?? [])
+            .map(
+              (item) => Padding(
+                padding: const EdgeInsets.only(bottom: 8.0),
+                child: Text(
+                  "• $item",
+                  style: GoogleFonts.josefinSans(fontSize: 14),
+                ),
+              ),
+            )
+            .toList();
 
       case 'Recettes':
-        return List<String>.from(recette['instructions'] ?? []).asMap().entries.map((entry) =>
-          Padding(
-            padding: const EdgeInsets.only(bottom: 12.0),
-            child: Text("Étape ${entry.key + 1} : ${entry.value}", style: GoogleFonts.josefinSans(fontSize: 14)),
-          )).toList();
+        return List<String>.from(recette['instructions'] ?? [])
+            .asMap()
+            .entries
+            .map(
+              (entry) => Padding(
+                padding: const EdgeInsets.only(bottom: 12.0),
+                child: Text(
+                  "Étape ${entry.key + 1} : ${entry.value}",
+                  style: GoogleFonts.josefinSans(fontSize: 14),
+                ),
+              ),
+            )
+            .toList();
 
       case 'Ingrédients':
       default:
-        return List<String>.from(recette['ingredients'] ?? []).map((item) => _checkItem(item)).toList();
+        return _checkedIngredients.entries
+            .map(
+              (entry) => CheckboxListTile(
+                value: entry.value,
+                title: Text(
+                  entry.key,
+                  style: GoogleFonts.josefinSans(fontSize: 14),
+                ),
+                controlAffinity: ListTileControlAffinity.leading,
+                onChanged: (val) {
+                  setState(() {
+                    _checkedIngredients[entry.key] = val!;
+                  });
+                },
+              ),
+            )
+            .toList();
     }
   }
-
-
-  Widget _checkItem(String text) {
-  return StatefulBuilder(
-    builder: (context, setState) {
-      bool isChecked = false;
-      return Row(
-        children: [
-          Checkbox(
-            value: isChecked,
-            onChanged: (value) {
-              setState(() {
-                isChecked = value!;
-              });
-            },
-          ),
-          Expanded(
-            child: Text(text, style: GoogleFonts.josefinSans(fontSize: 14)),
-          ),
-        ],
-      );
-    },
-  );
-}
-
 }

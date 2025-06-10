@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'services/supabase_service.dart';
 import 'screens/login_screen.dart';
 import 'screens/signup_screen.dart';
-import 'screens/mood_selection_screen.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'screens/suggestion_screen.dart';
-
-
+import 'screens/navigation_wrapper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await SupabaseService.initialize(); // tu gardes ça comme avant
-
+  await SupabaseService.initialize();
   runApp(const MyApp());
 }
 
@@ -27,6 +24,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.josefinSansTextTheme(
           Theme.of(context).textTheme,
         ),
+        scaffoldBackgroundColor: Colors.white,
       ),
       initialRoute: '/login',
       onGenerateRoute: (settings) {
@@ -36,15 +34,13 @@ class MyApp extends StatelessWidget {
             builder: (context) => SuggestionsScreen(humeur: mood),
           );
         }
-
-        // routes classiques
         switch (settings.name) {
           case '/login':
             return MaterialPageRoute(builder: (_) => const LoginScreen());
           case '/signup':
             return MaterialPageRoute(builder: (_) => const SignupScreen());
-          case '/home':
-            return MaterialPageRoute(builder: (_) => MoodSelectionScreen());
+          case '/wrapper':
+            return MaterialPageRoute(builder: (_) => const NavigationWrapper());
           default:
             return null;
         }
@@ -52,4 +48,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

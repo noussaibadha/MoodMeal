@@ -70,11 +70,12 @@ class _MoodSelectionScreenState extends State<MoodSelectionScreen> {
     final user = Supabase.instance.client.auth.currentUser;
 
     if (user != null) {
-      final data = await Supabase.instance.client
-          .from('users')
-          .select('prenom')
-          .eq('id', user.id)
-          .single();
+      final data =
+          await Supabase.instance.client
+              .from('users')
+              .select('prenom')
+              .eq('id', user.id)
+              .single();
 
       setState(() {
         prenom = data['prenom'] ?? '';
@@ -86,32 +87,44 @@ class _MoodSelectionScreenState extends State<MoodSelectionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        toolbarHeight: 80,
+        title: Text.rich(
+          TextSpan(
+            children: [
+              TextSpan(
+                text: 'Hello, ',
+                style: GoogleFonts.josefinSans(
+                  fontSize: 20,
+                  color: Color(0xFFF8A588),
+                ),
+              ),
+              TextSpan(
+                text: prenom,
+                style: GoogleFonts.josefinSans(
+                  fontSize: 20,
+                  color: Colors.black,
+                ),
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search, color: Colors.black),
+            onPressed: () {
+              Navigator.pushNamed(context, '/search');
+            },
+          ),
+        ],
+      ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text.rich(
-              TextSpan(
-                children: [
-                  TextSpan(
-                    text: 'Hello, ',
-                    style: GoogleFonts.josefinSans(
-                      fontSize: 20,
-                      color: Color(0xFFF8A588),
-                    ),
-                  ),
-                  TextSpan(
-                    text: prenom,
-                    style: GoogleFonts.josefinSans(
-                      fontSize: 20,
-                      color: Colors.black,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 20),
             Text(
               'Comment tu te sens aujourd’hui ?',
               style: GoogleFonts.josefinSans(
@@ -127,51 +140,51 @@ class _MoodSelectionScreenState extends State<MoodSelectionScreen> {
                 mainAxisSpacing: 20,
                 crossAxisSpacing: 20,
                 childAspectRatio: 1,
-                children: moods.map((mood) {
-                  return GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(
-                        context,
-                        '/suggestions',
-                        arguments: mood['label'],
-                      );
-
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: mood['color'],
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      padding: const EdgeInsets.all(12),
-                      child: Column(
-                        children: [
-                          Expanded(
-                            flex: 3,
-                            child: Center(
-                              child: Image.asset(
-                                mood['image'],
-                                height: mood['size'] ?? 140,
-                                width: mood['size'] ?? 140,
-                                fit: BoxFit.contain,
+                children:
+                    moods.map((mood) {
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            '/suggestions',
+                            arguments: mood['label'],
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: mood['color'],
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          padding: const EdgeInsets.all(12),
+                          child: Column(
+                            children: [
+                              Expanded(
+                                flex: 3,
+                                child: Center(
+                                  child: Image.asset(
+                                    mood['image'],
+                                    height: mood['size'] ?? 140,
+                                    width: mood['size'] ?? 140,
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
                               ),
-                            ),
+                              const SizedBox(height: 8),
+                              Text(
+                                mood['label'],
+                                style: GoogleFonts.josefinSans(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
                           ),
-                          const SizedBox(height: 8),
-                          Text(
-                            mood['label'],
-                            style: GoogleFonts.josefinSans(
-                              fontSize: 24,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                }).toList(),
+                        ),
+                      );
+                    }).toList(),
               ),
-            )
+            ),
           ],
         ),
       ),
