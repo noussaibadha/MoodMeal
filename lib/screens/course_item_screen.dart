@@ -73,31 +73,66 @@ class _CourseItemScreenState extends State<CourseItemScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFFFD3C6), // 🌸 même couleur que la AppBar
       appBar: AppBar(
-        title: Text(widget.category),
-        backgroundColor: Colors.orange,
+        backgroundColor: const Color(0xFFFFD3C6), // 🌸 même couleur que le fond
+        elevation: 0,
+        centerTitle: true,
+        title: Text(
+          widget.category,
+          style: const TextStyle(
+            color: Colors.black,
+            fontSize: 22,
+            fontWeight: FontWeight.w600,
+            fontFamily: 'JosefinSans',
+          ),
+        ),
+        iconTheme: const IconThemeData(color: Colors.black),
         actions: [
-          IconButton(icon: const Icon(Icons.add), onPressed: _showAddDialog),
+          IconButton(
+            icon: const Icon(Icons.add, size: 28),
+            onPressed: _showAddDialog,
+          ),
         ],
       ),
       body:
           isLoading
               ? const Center(child: CircularProgressIndicator())
+              : items.isEmpty
+              ? const Center(child: Text("Aucun article 😢"))
               : ListView.builder(
                 itemCount: items.length,
+                padding: const EdgeInsets.symmetric(vertical: 16),
                 itemBuilder: (context, index) {
                   final item = items[index];
-                  return ListTile(
-                    leading: Checkbox(
-                      value: item['checked'] ?? false,
-                      onChanged: (val) {
-                        _toggleCheck(item['id'], val!);
-                      },
-                    ),
-                    title: Text(item['nom'] ?? ''),
-                    trailing: IconButton(
-                      icon: const Icon(Icons.delete_outline),
-                      onPressed: () => _deleteItem(item['id']),
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: Row(
+                      children: [
+                        Checkbox(
+                          value: item['checked'] ?? false,
+                          onChanged:
+                              (val) => _toggleCheck(item['id'], val ?? false),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          activeColor: Colors.black,
+                        ),
+                        Expanded(
+                          child: Text(
+                            item['nom'] ?? '',
+                            style: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'JosefinSans',
+                            ),
+                          ),
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.delete_outline),
+                          onPressed: () => _deleteItem(item['id']),
+                        ),
+                      ],
                     ),
                   );
                 },
