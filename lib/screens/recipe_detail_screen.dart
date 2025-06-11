@@ -177,54 +177,60 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
   }
 
   List<Widget> _buildContentForTab(Map<String, dynamic> recette) {
-    switch (selectedTab) {
-      case 'Ustensiles':
-        return List<String>.from(recette['ustensiles'] ?? [])
-            .map(
-              (item) => Padding(
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: Text(
-                  "• $item",
-                  style: GoogleFonts.josefinSans(fontSize: 14),
-                ),
+  switch (selectedTab) {
+    case 'Ustensiles':
+      return List<String>.from(recette['ustensiles'] ?? [])
+          .map(
+            (item) => Padding(
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: Text(
+                "• $item",
+                style: GoogleFonts.josefinSans(fontSize: 14),
               ),
-            )
-            .toList();
+            ),
+          )
+          .toList();
 
-      case 'Recettes':
-        return List<String>.from(recette['instructions'] ?? [])
-            .asMap()
-            .entries
-            .map(
-              (entry) => Padding(
-                padding: const EdgeInsets.only(bottom: 12.0),
-                child: Text(
-                  "Étape ${entry.key + 1} : ${entry.value}",
-                  style: GoogleFonts.josefinSans(fontSize: 14),
-                ),
-              ),
-            )
-            .toList();
+    case 'Recettes':
+      final instructionsRaw = recette['instructions'];
+      final List<String> instructions = instructionsRaw is String
+          ? instructionsRaw.split(RegExp(r'\\n|\\r\\n|\n'))
+          : List<String>.from(instructionsRaw ?? []);
 
-      case 'Ingrédients':
-      default:
-        return _checkedIngredients.entries
-            .map(
-              (entry) => CheckboxListTile(
-                value: entry.value,
-                title: Text(
-                  entry.key,
-                  style: GoogleFonts.josefinSans(fontSize: 14),
-                ),
-                controlAffinity: ListTileControlAffinity.leading,
-                onChanged: (val) {
-                  setState(() {
-                    _checkedIngredients[entry.key] = val!;
-                  });
-                },
+      return instructions
+          .asMap()
+          .entries
+          .map(
+            (entry) => Padding(
+              padding: const EdgeInsets.only(bottom: 12.0),
+              child: Text(
+                "Étape ${entry.key + 1} : ${entry.value.trim()}",
+                style: GoogleFonts.josefinSans(fontSize: 14),
               ),
-            )
-            .toList();
-    }
+            ),
+          )
+          .toList();
+
+    case 'Ingrédients':
+    default:
+      return _checkedIngredients.entries
+          .map(
+            (entry) => CheckboxListTile(
+              value: entry.value,
+              title: Text(
+                entry.key,
+                style: GoogleFonts.josefinSans(fontSize: 14),
+              ),
+              controlAffinity: ListTileControlAffinity.leading,
+              onChanged: (val) {
+                setState(() {
+                  _checkedIngredients[entry.key] = val!;
+                });
+              },
+            ),
+          )
+          .toList();
   }
+}
+
 }
