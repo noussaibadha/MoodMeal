@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1276b503-d112-41c6-83d6-4a206e73ffd6",
+    "user_id": "3e8a82c5-a94c-47f9-86eb-1bbe7eaf559c",
+    "categorie": "Fruits & Légumes",
+    "nom": "Pommes",
+    "checked": false,
+    "created_at": "2025-06-11 00:08:25.316363+00"
+  },
+  {
+    "id": "9a786187-5996-414d-afe9-4242f2dfae77",
+    "user_id": "3e8a82c5-a94c-47f9-86eb-1bbe7eaf559c",
+    "categorie": "Fruits & Légumes",
+    "nom": "fraise",
+    "checked": false,
+    "created_at": "2025-06-12 14:09:28.185986+00"
+  },
+  {
+    "id": "ffa070e5-b4ef-42e6-9fae-ea125dc274d6",
+    "user_id": "3e8a82c5-a94c-47f9-86eb-1bbe7eaf559c",
+    "categorie": "Fruits & Légumes",
+    "nom": "poire",
+    "checked": false,
+    "created_at": "2025-06-12 14:09:22.850869+00"
+  }
+]

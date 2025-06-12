@@ -1,0 +1,20 @@
+[
+  {
+    "id": "38141500-bb32-4b91-a8bf-17d828a44cf2",
+    "user_id": "3e8a82c5-a94c-47f9-86eb-1bbe7eaf559c",
+    "recette_id": "e7416325-4fba-4e59-8693-ae618fa6e040",
+    "created_at": "2025-06-12 14:08:58.210576+00"
+  },
+  {
+    "id": "45569c4c-15fe-4a89-bcb2-840e49b14a86",
+    "user_id": "3e8a82c5-a94c-47f9-86eb-1bbe7eaf559c",
+    "recette_id": "e6f484b1-298b-4b33-ab13-4e63dd448d23",
+    "created_at": "2025-06-10 23:53:52.307956+00"
+  },
+  {
+    "id": "86a5af0b-e956-476d-8994-cacf0f2ed50b",
+    "user_id": "3e8a82c5-a94c-47f9-86eb-1bbe7eaf559c",
+    "recette_id": "3e0ec426-12c2-4d62-a887-09255e546088",
+    "created_at": "2025-06-12 14:08:58.932764+00"
+  }
+]

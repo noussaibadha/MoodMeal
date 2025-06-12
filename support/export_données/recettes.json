@@ -1,0 +1,279 @@
+[
+  {
+    "id": "38dcab06-f1aa-48cd-99b0-55e565bdee05",
+    "nom": "Wrap Poulet, Avocat & Sauce Yaourt",
+    "image_url": "https://qumylksbtceqmdndibqx.supabase.co/storage/v1/object/public/recettes-images//wrap_poulet_avocat.png",
+    "nb_personne": 2,
+    "calories": 430,
+    "temps": 20,
+    "likes": 0,
+    "ingredients": [
+      "Galette De Blé Ou Maïs",
+      "Blanc De Poulet",
+      "Avocat",
+      "Yaourt Nature",
+      "Jus De Citron",
+      "Ail En Poudre",
+      "Paprika",
+      "Cumin",
+      "Persil",
+      "Sel",
+      "Poivre",
+      "Huile D’Olive"
+    ],
+    "ustensiles": [
+      "Poêle",
+      "Bol",
+      "Cuillère",
+      "Planche À Découper",
+      "Couteau"
+    ],
+    "instructions": "Couper le poulet en lanières, l’assaisonner avec sel, poivre, ail en poudre, paprika, cumin, et faire revenir à la poêle avec un filet d’huile d’olive.\\n • Dans un bol, mélanger le yaourt avec du jus de citron, ail en poudre, sel, poivre, paprika doux et un peu de persil haché.\\n • Écraser l’avocat ou le couper en tranches, puis l’assaisonner légèrement avec du citron, sel et ail en poudre.\\n • Chauffer légèrement les galettes.\\n • Garnir chaque wrap avec le poulet chaud, l’avocat et la sauce yaourt.\\n • Rouler et déguster aussitôt.",
+    "categorie_tab": "Entrée",
+    "origine": "Mexique / France 🌍",
+    "humeur": "Fatigué·e",
+    "description": "Simple, bon, sans fatigue",
+    "tags": [
+      "Réconfortant"
+    ]
+  },
+  {
+    "id": "3e0ec426-12c2-4d62-a887-09255e546088",
+    "nom": "Keftaji tunisien",
+    "image_url": "https://qumylksbtceqmdndibqx.supabase.co/storage/v1/object/public/recettes-images//keftaji.png",
+    "nb_personne": 2,
+    "calories": 720,
+    "temps": 40,
+    "likes": 0,
+    "ingredients": [
+      "Farine",
+      "Lait",
+      "Oeuf",
+      "Sucre",
+      "Levure chimique",
+      "Vanille",
+      "Sel",
+      "Beurre"
+    ],
+    "ustensiles": [
+      "Poêle",
+      "Casserole",
+      "Couteau",
+      "Planche À Découper",
+      "Passoire",
+      "Papier Absorbant"
+    ],
+    "instructions": "Éplucher et couper les pommes de terre, poivrons, courgettes et tomates en petits dés.\\n • Faire frire chaque légume séparément dans l’huile jusqu’à ce qu’ils soient bien dorés, puis les égoutter sur du papier absorbant.\\n • Une fois tous les légumes cuits, casser les œufs directement dans l’huile et les faire frire comme des œufs au plat.\\n • Couper les œufs frits en morceaux et les ajouter aux légumes.\\n • Saler, poivrer, ajouter du cumin, de l’ail haché et du persil frais.\\n • Mélanger le tout et servir chaud avec du pain tunisien ou de la baguette.",
+    "categorie_tab": "Goûter",
+    "origine": "Tunisie 🇹🇳",
+    "humeur": "Trop faim",
+    "description": "Pommes De Terre, Poivron Vert, Courgette, Tomate, Œufs, Ail, Huile De Friture, Persil, Sel, Poivre, Cumin",
+    "tags": [
+      "Friture"
+    ]
+  },
+  {
+    "id": "a4696074-8b3e-469b-89ff-922f97ad6d0c",
+    "nom": "Mini pancakes moelleux",
+    "image_url": "https://qumylksbtceqmdndibqx.supabase.co/storage/v1/object/public/recettes-images//mini_pankace.png",
+    "nb_personne": 2,
+    "calories": 310,
+    "temps": 15,
+    "likes": 0,
+    "ingredients": [
+      "Farine",
+      "Lait",
+      "Oeuf",
+      "Sucre",
+      "Levure chimique",
+      "Vanille",
+      "Sel",
+      "Beurre"
+    ],
+    "ustensiles": [
+      "Poêle",
+      "Saladier",
+      "Fouet",
+      "Petite Louche",
+      "Spatule"
+    ],
+    "instructions": "• Dans un saladier, fouetter l’œuf avec le sucre et la vanille.\\n • Ajouter le lait, puis incorporer la farine, la levure chimique et une pincée de sel.\\n • Mélanger jusqu’à obtention d’une pâte lisse et homogène.\\n • Faire chauffer une poêle avec un peu de beurre.\\n • Verser des petites quantités de pâte pour former les mini pancakes.\\n • Cuire 1 à 2 minutes par face, jusqu’à ce qu’ils soient bien dorés.\\n • Servir tiède, avec du miel, du sirop ou de la pâte à tartiner.",
+    "categorie_tab": "Goûter",
+    "origine": "États-Unis 🇺🇸",
+    "humeur": "Grignoter",
+    "description": "Petits, moelleux, et parfaits pour une pause gourmande sans culpabiliser !",
+    "tags": [
+      "Grignotage"
+    ]
+  },
+  {
+    "id": "ada87938-a86d-4747-b4dc-2f8dafffd1c1",
+    "nom": "Riz crémeux aux champignons & herbes",
+    "image_url": "https://ton-image.jpg",
+    "nb_personne": 2,
+    "calories": 350,
+    "temps": 20,
+    "likes": 0,
+    "ingredients": [
+      "Riz arborio",
+      "Champignons de Paris",
+      "Crème légère",
+      "Ail",
+      "Oignon",
+      "Herbes",
+      "Huile d’olive"
+    ],
+    "ustensiles": [
+      "Poêle",
+      "Casserole"
+    ],
+    "instructions": "1. Cuire les oignons\n2. Ajouter le riz...",
+    "categorie_tab": "plat",
+    "origine": "France 🇫🇷",
+    "humeur": "Stressé·e",
+    "description": "Un plat réconfortant pour apaiser ton esprit",
+    "tags": [
+      "végétarien"
+    ]
+  },
+  {
+    "id": "cca007b8-b73c-44af-aa02-b3461333f6e6",
+    "nom": "Soupe douce patate douce & lait de coco",
+    "image_url": "https://qumylksbtceqmdndibqx.supabase.co/storage/v1/object/public/recettes-images//soupe_patate_douce.png",
+    "nb_personne": 2,
+    "calories": 280,
+    "temps": 25,
+    "likes": 0,
+    "ingredients": [
+      "Patate Douce",
+      "Lait De Coco",
+      "Oignon",
+      "Ail",
+      "Gingembre",
+      "Huile D’Olive",
+      "Bouillon De Légumes",
+      "Sel",
+      "Poivre",
+      "Coriandre Fraîche"
+    ],
+    "ustensiles": [
+      "Casserole",
+      "Mixeur",
+      "Économe",
+      "Couteau",
+      "Planche À Découper"
+    ],
+    "instructions": "Éplucher et couper les patates douces en cubes.\\n • Faire revenir l’oignon, l’ail et le gingembre dans un peu d’huile d’olive.\\n • Ajouter les patates douces et faire revenir 2 minutes.\\n • Verser le bouillon de légumes et cuire 15-20 min à feu moyen, jusqu’à ce que les patates soient tendres.\\n • Mixer la soupe, ajouter le lait de coco, saler et poivrer.\\n • Servir chaud, avec un peu de coriandre fraîche sur le dessus.",
+    "categorie_tab": "Entrée",
+    "origine": "Afrique / Asie 🌍",
+    "humeur": "Stressé·e",
+    "description": "Douceur pour relâcher la pression",
+    "tags": [
+      "Végétarien"
+    ]
+  },
+  {
+    "id": "e6192f49-b260-4e7e-a6df-1285aedfe01d",
+    "nom": "Poke bowl saumon, avocat & quinoa",
+    "image_url": "https://qumylksbtceqmdndibqx.supabase.co/storage/v1/object/public/recettes-images//poke_bowl_saumon_quinoa.png",
+    "nb_personne": 2,
+    "calories": 520,
+    "temps": 20,
+    "likes": 0,
+    "ingredients": [
+      "Quinoa",
+      "Saumon Cru",
+      "Avocat",
+      "Concombre",
+      "Mangue",
+      "Sauce Soja",
+      "Graines De Sésame",
+      "Citron Vert",
+      "Sel",
+      "Poivre"
+    ],
+    "ustensiles": [
+      "Casserole",
+      "Planche À Découper",
+      "Couteau",
+      "Bol"
+    ],
+    "instructions": "• Cuire le quinoa selon les instructions du paquet, puis le laisser refroidir.\\n • Couper le saumon en dés et le faire mariner 10 min dans un peu de sauce soja et jus de citron vert.\\n • Éplucher et couper l’avocat, le concombre et la mangue en dés ou en lamelles.\\n • Disposer le quinoa au fond d’un bol, puis ajouter joliment le saumon, l’avocat, le concombre et la mangue par sections.\\n • Saupoudrer de graines de sésame, ajouter un filet de citron vert et servir frais.",
+    "categorie_tab": "Plat",
+    "origine": "Hawaï 🇺🇸",
+    "humeur": "Motivé·e",
+    "description": "Un bol coloré, frais et équilibré.",
+    "tags": [
+      "Sans gluten"
+    ]
+  },
+  {
+    "id": "e6f484b1-298b-4b33-ab13-4e63dd448d23",
+    "nom": "Brick tunisienne",
+    "image_url": "https://qumylksbtceqmdndibqx.supabase.co/storage/v1/object/public/recettes-images//brick_tunisienne.png",
+    "nb_personne": 1,
+    "calories": 280,
+    "temps": 15,
+    "likes": 0,
+    "ingredients": [
+      "feuille de brick",
+      "œuf",
+      "thon",
+      "fromage",
+      "persil",
+      "sel",
+      "poivre"
+    ],
+    "ustensiles": [
+      "poêle",
+      "spatule",
+      "casserole"
+    ],
+    "instructions": "• Déposer la feuille de brick.\\n• Ajouter la purée de pomme de terre bouillie en formant un petit puits.\\n• Disposer le thon et le fromage autour du puits.\\n• Casser l'œuf au centre.\\n• Saler, poivrer, ajouter du persil.\\n• Refermer la brick en demi-lune.\\n• Faire frire dans une poêle avec un peu d’huile, 2-3 min par face.",
+    "categorie_tab": "entrée",
+    "origine": "Tunisie 🇹🇳",
+    "humeur": "Flemme",
+    "description": "Rapide, croustillante et sans prise de tête.",
+    "tags": [
+      "croustillant"
+    ]
+  },
+  {
+    "id": "e7416325-4fba-4e59-8693-ae618fa6e040",
+    "nom": "Burger maison au poulet croustillant & frites au four",
+    "image_url": "https://qumylksbtceqmdndibqx.supabase.co/storage/v1/object/public/recettes-images//burger_poulet.png",
+    "nb_personne": 2,
+    "calories": 680,
+    "temps": 45,
+    "likes": 0,
+    "ingredients": [
+      "pain à burger",
+      "blanc de poulet",
+      "œuf",
+      "chapelure",
+      "pommes de terre",
+      "salade",
+      "tomate",
+      "fromage",
+      "sel",
+      "poivre",
+      "paprika"
+    ],
+    "ustensiles": [
+      "four",
+      "poêle",
+      "assiette",
+      "papier cuisson",
+      "bol",
+      "spatule"
+    ],
+    "instructions": "• Couper les pommes de terre en frites, les assaisonner avec sel, poivre, paprika, et enfourner 25 min à 200°C.\\n • Tremper les blancs de poulet dans un œuf battu avec du sel, poivre, paprika, ail en poudre et une pincée d’herbes de Provence, puis les passer dans la chapelure.\\n • Faire cuire les filets panés à la poêle jusqu’à ce qu’ils soient bien dorés.\\n • Chauffer légèrement le pain à burger.\\n • Monter le burger avec salade, tomate, sauce au choix et poulet croustillant.\\n • Servir chaud avec les frites au four.",
+    "categorie_tab": "plat",
+    "origine": "États-Unis 🇺🇸",
+    "humeur": "Trop faim",
+    "description": "Un plat savoureux et croustillant.",
+    "tags": [
+      "comfort food"
+    ]
+  }
+]
