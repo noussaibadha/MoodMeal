@@ -1,17 +1,14 @@
-# mood_meal
+MoodMeal est une application mobile développée en Flutter, pensée pour aider les utilisateurs à choisir leurs repas en fonction de leur humeur. L’objectif est de proposer une expérience personnalisée, intuitive et ludique, tout en sensibilisant à une alimentation variée et équilibrée.
 
-A new Flutter project.
+L'application permet à l'utilisateur de :
 
-## Getting Started
+Sélectionner son humeur du moment via une interface visuelle,
+Recevoir des suggestions de recettes adaptées à cette humeur,
+Rechercher des recettes selon des mots-clés,
+Enregistrer ses plats préférés dans une liste de favoris,
+Générer une liste de courses basée sur les recettes choisies
+Elle intègre également un système de connexion/inscription sécurisé (avec Supabase).
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# MoodMeal
+Améliorations possibles
+Ne faire qu'un seule section pour la liste de course.
+Ajouter une page profil pour pouvoir gérer le compte, les préférences etc.
